@@ -23,7 +23,6 @@ barplot(y, names.arg = x, col = "red")
 
 
 
-
 # Density / Bar Texture
 # To change the bar texture, use the density parameter
 x <- c("A", "B", "C", "D")
@@ -33,12 +32,10 @@ barplot(y, names.arg = x, density = 10)
 
 
 
-
 # Bar Width
 # Use the width parameter to change the width of the bars
 x <- c("A", "B", "C", "D")
 y <- c(2, 4, 6, 8)
-
 
 
 
