@@ -439,7 +439,7 @@ min(v1)
 
 
 
-# Comparing vectors using comparision operators
+# Comparing vectors using comparison operators
 
 v1 <- c(19,12,45)
 v2 <- c(19,20,30)
