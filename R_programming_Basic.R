@@ -16,6 +16,10 @@ y <- 20
 print(y)
 # [1] 20
 
+cat("\"Everything you can imagine is real.\" - Picasso")
+# "Everything you can imagine is real." - Picasso
+
+
 class(x)
 # [1] "numeric"
 
