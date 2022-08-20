@@ -16,8 +16,49 @@ y <- 20
 print(y)
 # [1] 20
 
+
 cat("\"Everything you can imagine is real.\" - Picasso")
 # "Everything you can imagine is real." - Picasso
+
+
+# Basic Math
+x <- 11
+y <- 4
+
+#addition
+print(x+y)
+# [1] 15
+
+
+#substraction
+print(x-y)
+# [1] 7
+
+
+#multiplication
+print(x*y)
+# [1] 44
+
+
+#division
+print(x/y)
+# [1] 2.75
+
+
+#exponentation
+print(x^y) #or x**y
+# [1] 14641
+
+
+#modulus (remainder from division)
+print(x%%y)
+# [1] 3
+
+
+#integer division
+print(x%/%y)
+# [1] 2
+
 
 
 class(x)
