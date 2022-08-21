@@ -1,6 +1,8 @@
-num = as.integer(readline(prompt="Enter a number: "))
-if((num %% 2) == 0) {
-  print(paste(num,"is Even"))
-} else {
-  print(paste(num,"is Odd"))
+# Find whether the input number is even or odd
+x <- readLines('stdin')
+num <- as.integer(x[1])
+if(num %% 2 == 0) {
+  print("Even")
+  } else {
+    print("Odd")
 }
