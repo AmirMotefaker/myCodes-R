@@ -21,6 +21,88 @@ cat("\"Everything you can imagine is real.\" - Picasso")
 # "Everything you can imagine is real." - Picasso
 
 
+a <- 7
+b <- 2
+print(a%/%b)
+# [1] 3
+
+
+x <- 176400
+print(sqrt(x))
+# [1] 420
+
+
+x <- 14
+print(x > 20) 
+# [1] FALSE
+
+x <- 42
+print(x >= 8)
+# [1] TRUE
+
+print(x < 24)
+# [1] FALSE
+
+print(x == 42)
+# [1] TRUE
+
+print(x != 42)
+# [1] FALSE
+
+
+num <- 15
+val <- num-6
+print((num%/%val)>=2)
+# [1] FALSE
+
+
+input <- readLines('stdin')
+print(input[1]) 
+
+input <- readLines('stdin')
+x <- input[1]
+x <- as.integer(x)
+print(x*2) 
+
+
+
+var = readline();
+var = as.integer(var);
+print(var)
+# [1] "var = as.integer(var);"
+
+
+
+name = readline(prompt="Input your name: ")
+# Input your name: amir
+
+print(R.version.string)
+# [1] "R version 4.2.1 (2022-06-23 ucrt)"
+
+
+x <- 42
+if(x >= 100) {
+  print("x is big")
+} else {
+  print("x is less than 100")
+}
+# [1] "x is less than 100"
+
+
+num <- 3
+if(num == 1) {
+  print("One")
+} else if(num == 2) {
+  print("Two")
+} else if (num == 3) {
+  print("Three")
+} else {
+  print("Something else")
+}
+# [1] "Three"
+
+
+
 # Basic Math
 x <- 11
 y <- 4
