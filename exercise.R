@@ -164,58 +164,191 @@ profit                       #Displays the value stored in profit
 
 
 # Data types in R
-num <- 3.7 #Decimals are part of the Numeric class in R
+num <- 3.7
+num
+# [1] 3.7
+typeof(num)
+# [1] "double"
+class(num)
+# [1] "numeric"
 
-i <- 10 #Whole numbers are known as integers
-typeof(x) #To check the data type of the variable
+
+i <- 10 
+typeof(x)
+# [1] "integer"
+j <- 10L
+j
+# [1] 10
+typeof(j)
+# [1] "integer"
+class(j)
+# [1] "integer"
+
 
 t <- TRUE
-f <- FALSE #Boolean values are part of the logical class
+f <- FALSE
 typeof(t)
+# [1] "logical"
 
-ch <- "HELLO" #Text/string values are known as characters 
-class (ch) #Checks the data type of a variable
-typeof(ch) #Checks the data type of a variable
 
-c <- 1+2i #R supports complex data type too
-class(c)
+ch <- "HELLO"  
+class (ch)
+# [1] "character"
+typeof(ch) 
+# [1] "character"
 length(ch)
+# [1] 1
+
+c <- 1+2i 
+class(c)
+# [1] "complex"
+length(ch)
+# [1] 1
+
+
 
 # Using the Print function
 
-print ("hey") #Prints hey on the screen 
+print ("hey")  
+# [1] "hey"
 
 y <- 20
-print(y) #Prints the value of y
+print(y)
+# [1] 20
+y
+# [1] 20
+
 
 x <- mtcars
-print (mtcars) #Prints the mtcars dataset
+print (mtcars) 
 
-print(paste('hello','students'))  #Paste function
+print(paste('hello','students'))
+# [1] "hello students"
 
-print(paste('hello','students',sep=',')) #Sep is for the chosen separator between the pasted items
 
-paste0('hello','students')  #Displays without space
+print(paste('hello','students',sep=','))
+# [1] "hello,students"
 
-sprintf("%s is %f feet tall", "Ashley", 5.1) #Returns a character vector containing a formatted combination of text and variable values 
+
+paste0('hello','students')
+# [1] "hellostudents"
+
+
+sprintf("%s is %f feet tall", "Ashley", 5.1)
+# [1] "Ashley is 5.100000 feet tall"
+
+
+
+# R Objects
+a <- 1
+ai <- 1L
+1/Inf
+# [1] 0
+a
+# [1] 1
+typeof(a)
+# [1] "double"
+typeof(ai)
+# [1] "integer"
+
 
 # Vectors in R
 
 # Create vectors
-vec1<-c(10,20,30)
+vec1<-c(1,2,3,4,5)
 vec1
+# [1] 1 2 3 4 5
 class(vec1)
+# [1] "numeric"
+typeof(vec1)
+# [1] "double"
+
+v2 <- c('hello','world')
+v2
+# [1] "hello" "world"
+print(v2)
+# [1] "hello" "world"
+print(paste0(v2))
+# [1] "hello" "world"
+class(v2)
+# [1] "character"
+
 
 vec2<-c("a","b","c")
 vec2
+# [1] "a" "b" "c"
 class(vec2)
+# [1] "character"
+
+x <- c(0.5,0.6)
+x
+# [1] 0.5 0.6
+
+x <- c(TRUE,FALSE)
+x
+# [1]  TRUE FALSE
+x <- c(T,F)
+x
+# [1]  TRUE FALSE
+x <- 9:29
+x
+#  [1]  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+x <- c(1+0i, 2+4i)
+x
+# [1] 1+0i 2+4i
 
 vec3<-c(TRUE,FALSE,TRUE)
 vec3
+# [1]  TRUE FALSE  TRUE
 class(vec3)
+# [1] "logical"
+vec1;vec2;vec3
+# [1] 1 2 3 4 5
+# [1] "a" "b" "c"
+# [1]  TRUE FALSE  TRUE
 
-# Print the above 3 vectors at once with semicolon
-vec1;vec2;vec3 #';' is used to separate 2 or more variables
+x <- vector("numeric", length = 10) 
+x
+#  [1] 0 0 0 0 0 0 0 0 0 0
+
+
+numbers <- c(1,2,3,4,5,6)
+numbers
+# [1] 1 2 3 4 5 6
+
+ltrs <- c('a','b','c','d')
+print(ltrs)
+# [1] "a" "b" "c" "d"
+
+mixed_vec = c(numbers,ltrs)
+print(mixed_vec)
+#  [1] "1" "2" "3" "4" "5" "6" "a" "b" "c" "d"
+
+num <- 1:10
+num
+#  [1]  1  2  3  4  5  6  7  8  9 10
+class(num)
+# [1] "integer"
+
+num <- c(1:10, 10.5)
+class(num)
+# [1] "numeric"
+
+ltrs = letters[1:10]
+ltrs
+#  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j"
+class(ltrs)
+# [1] "character"
+
+fac = as.factor(ltrs)
+class(fac)
+# [1] "factor"
+fac
+#  [1] a b c d e f g h i j
+# Levels: a b c d e f g h i j
+
+
+-------------------------------------
 
 vec4<-c(10,"a",TRUE) #R converts every value to character type
 vec4
