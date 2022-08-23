@@ -347,29 +347,220 @@ fac
 #  [1] a b c d e f g h i j
 # Levels: a b c d e f g h i j
 
+y <- c(1.7 , "a")
+y
+# [1] "1.7" "a"  
+class(y)
+#[1] "character"
 
--------------------------------------
 
-vec4<-c(10,"a",TRUE) #R converts every value to character type
-vec4
-class(vec4)
+z<-c(10,"a",TRUE)
+z
+# [1] "10"   "a"    "TRUE"
+class(z)
+# [1] "character"
 
-vec5 <- c(FALSE,2) #R converts every value to numeric type
+
+vec5 <- c(FALSE,2)
 vec5
+# [1] 0 2
 class(vec5)
+# [1] "numeric"
+
 
 vec6 <- c('A',1)
 vec6
+# [1] "A" "1"
 class(vec6)
+# [1] "character"
+
 
 vec7<-c(1:20)
 vec7
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
 
 vec8<-seq(1,20)
 vec8
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
 
 vec9<-1:25
 vec9
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+
+x <- 0:6
+x
+# [1] 0 1 2 3 4 5 6
+class(x)
+# [1] "integer"
+as.numeric(x)
+# [1] 0 1 2 3 4 5 6
+as.logical(x)
+# [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+as.character(x)
+# [1] "0" "1" "2" "3" "4" "5" "6"
+
+x <- c("a", "b", "c")
+class(x)
+# [1] "character"
+as.numeric(x)
+# [1] NA NA NA
+# Warning message:
+# NAs introduced by coercion 
+as.logical(x)
+# [1] NA NA NA
+as.complex(x)
+# [1] NA NA NA
+# Warning message:
+# NAs introduced by coercion 
+x
+# [1] "a" "b" "c"
+
+
+# Attributes
+x <-1 
+x
+# [1] 1
+attributes(x)
+# NULL
+
+
+# List
+
+test <- c("music tracks", 100, 5)
+test
+# [1] "music tracks" "100"          "5"           
+class(test)
+# [1] "character"
+typeof(test)
+# [1] "character"
+
+test <- list("music tracks", 100, 5)
+test
+# [[1]]
+# [1] "music tracks"
+
+# [[2]]
+# [1] 100
+
+# [[3]]
+# [1] 5
+
+is.list(test)
+# [1] TRUE
+test <- c("music tracks", 100, 5)
+is.list(test)
+# [1] FALSE
+test <- list("music tracks", 100, 5)
+name(test) <- c("product", "count", "rating")
+# Error in name(test) <- c("product", "count", "rating") : 
+#  could not find function "name<-"
+names(test) <- c("product", "count", "rating")
+test
+# $product
+# [1] "music tracks"
+
+# $count
+# [1] 100
+
+# $rating
+# [1] 5
+test[[1]]
+# [1] "music tracks"
+test[[2]]
+# [1] 100
+test[[3]]
+# [1] 5
+
+prod.category <- list(product="music tracks",count=100,ratings=5)
+prod.category
+# $product
+# [1] "music tracks"
+
+# $count
+# [1] 100
+
+# $ratings
+# [1] 5
+
+str(prod.category)
+# List of 3
+# $ product: chr "music tracks"
+# $ count  : num 100
+# $ ratings: num 5
+
+similar.prod <- list(product="films",count=50,ratings=4)
+similar.prod
+# $product
+# [1] "films"
+
+# $count
+# [1] 50
+
+# $ratings
+# [1] 4
+
+prod.category <- list(product="music tracks",count=100,ratings=5,similar=similar.prod)
+prod.category
+# $product
+# [1] "music tracks"
+
+# $count
+# [1] 100
+
+# $ratings
+# [1] 5
+
+# $similar
+# $similar$product
+# [1] "films"
+
+# $similar$count
+# [1] 50
+
+# $similar$ratings
+# [1] 4
+
+prod.category[[1]]
+# [1] "music tracks"
+prod.category[[2]]
+# [1] 100
+prod.category[[3]]
+# [1] 5
+prod.category[[4]]
+# $product
+# [1] "films"
+
+# $count
+# [1] 50
+
+# $ratings
+# [1] 4
+prod.category[["music tracks"]]
+# NULL
+prod.category[["product"]]
+# [1] "music tracks"
+prod.category[c(FALSE,TRUE,FALSE,TRUE)]
+# $count
+# [1] 100
+
+# $similar
+# $similar$product
+# [1] "films"
+
+# $similar$count
+# [1] 50
+
+# $similar$ratings
+# [1] 4
+
+prod.category$product
+# [1] "music tracks"
+prod.category$count
+# [1] 100
+
+-----------------------------------------
 
 #Create a vector with odd values b/w 1 to 20
 
