@@ -560,8 +560,87 @@ prod.category$product
 prod.category$count
 # [1] 100
 
------------------------------------------
 
+# Matrix
+
+matrix(1:6,nrow = 2)
+#      [,1] [,2] [,3]
+# [1,]    1    3    5
+# [2,]    2    4    6
+matrix(1:6,ncol = 2)
+#      [,1] [,2]
+# [1,]    1    4
+# [2,]    2    5
+# [3,]    3    6
+matrix(1:6,nrow = 2,byrow = TRUE)
+#      [,1] [,2] [,3]
+# [1,]    1    2    3
+# [2,]    4    5    6
+matrix(1:3,nrow = 2,ncol = 3)
+#      [,1] [,2] [,3]
+# [1,]    1    3    2
+# [2,]    2    1    3
+cbind(1:3,1:3)
+#      [,1] [,2]
+# [1,]    1    1
+# [2,]    2    2
+# [3,]    3    3
+rbind(1:3,1:3)
+#      [,1] [,2] [,3]
+# [1,]    1    2    3
+# [2,]    1    2    3
+n <- matrix(1:6,byrow = TRUE,nrow = 2)
+n
+#      [,1] [,2] [,3]
+# [1,]    1    2    3
+# [2,]    4    5    6
+rbind(n,7:9)
+#      [,1] [,2] [,3]
+# [1,]    1    2    3
+# [2,]    4    5    6
+# [3,]    7    8    9
+n <- matrix(1:6,byrow = TRUE,nrow = 2)
+n
+#      [,1] [,2] [,3]
+# [1,]    1    2    3
+# [2,]    4    5    6
+cbind(n,c(10,11))
+#      [,1] [,2] [,3] [,4]
+# [1,]    1    2    3   10
+# [2,]    4    5    6   11
+
+n <- matrix(1:6,byrow = TRUE,nrow = 2)
+rownames(n) <- c("row1","row2")
+n
+#      [,1] [,2] [,3]
+# row1    1    2    3
+# row2    4    5    6
+colnames(n) <- c("col1","col2","col3")
+n
+#      col1 col2 col3
+# row1    1    2    3
+# row2    4    5    6
+
+n <- matrix(1:6,byrow = TRUE,nrow = 2)
+dimnames = list(c("row1","row2"),c("col1","col2","col3"))
+dimnames
+# [[1]]
+# [1] "row1" "row2"
+
+# [[2]]
+# [1] "col1" "col2" "col3"
+
+x <- matrix(1:8,ncol = 2)
+x
+#      [,1] [,2]
+# [1,]    1    5
+# [2,]    2    6
+# [3,]    3    7
+# [4,]    4    8
+
+----------------------------------------
+  
+  
 #Create a vector with odd values b/w 1 to 20
 
 odd_value<-seq(1,20,2)
