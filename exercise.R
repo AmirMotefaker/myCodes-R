@@ -1,5 +1,3 @@
-# Code by @AmirMotefaker
-
 model1 <- 'hello'
 typeof(model1)
 # [1] "character"
@@ -657,6 +655,146 @@ cbind(x,l)
 
 
 # Data Frame
+name <- c("john","peter","patrick","julie","bob")
+name
+# [1] "john"    "peter"   "patrick" "julie"   "bob"    
+class(name)
+# [1] "character"
+age <- c(28,30,31,38,35)
+children <- c(FALSE,TRUE,TRUE,FALSE,TRUE)
+df <- data.frame(name,age,children)
+df
+#      name age children
+# 1    john  28    FALSE
+# 2   peter  30     TRUE
+# 3 patrick  31     TRUE
+# 4   julie  38    FALSE
+# 5     bob  35     TRUE
+df <- data.frame(Name=name,Age=age,Children=children)
+df
+#      Name Age Children
+# 1    john  28    FALSE
+# 2   peter  30     TRUE
+# 3 patrick  31     TRUE
+# 4   julie  38    FALSE
+# 5     bob  35     TRUE
+str(df)
+# 'data.frame':	5 obs. of  3 variables:
+# $ Name    : chr  "john" "peter" "patrick" "julie" ...
+# $ Age     : num  28 30 31 38 35
+# $ Children: logi  FALSE TRUE TRUE FALSE TRUE
+df <- data.frame(name,age,children,stringsAsFactors = FALSE)
+str(df)
+# 'data.frame':	5 obs. of  3 variables:
+# $ name    : chr  "john" "peter" "patrick" "julie" ...
+# $ age     : num  28 30 31 38 35
+# $ children: logi  FALSE TRUE TRUE FALSE TRUE
+df
+#      name age children
+# 1    john  28    FALSE
+# 2   peter  30     TRUE
+# 3 patrick  31     TRUE
+# 4   julie  38    FALSE
+# 5     bob  35     TRUE
+df[3,2]
+# [1] 31
+df[3,"age"]
+# [1] 31
+df[3,]
+#      name age children
+# 3 patrick  31     TRUE
+df["age"]
+#   age
+# 1  28
+# 2  30
+# 3  31
+# 4  38
+# 5  35
+df[c(3,5),c("age","children")]
+#   age children
+# 3  31     TRUE
+# 5  35     TRUE
+df[2]
+#   age
+# 1  28
+# 2  30
+# 3  31
+# 4  38
+# 5  35
+df$age
+# [1] 28 30 31 38 35
+df[["age"]]
+# [1] 28 30 31 38 35
+df[[2]]
+# [1] 28 30 31 38 35
+df["age"]
+#   age
+# 1  28
+# 2  30
+# 3  31
+# 4  38
+# 5  35
+df
+#      name age children
+# 1    john  28    FALSE
+# 2   peter  30     TRUE
+# 3 patrick  31     TRUE
+# 4   julie  38    FALSE
+# 5     bob  35     TRUE
+height <- c(163,177,163,162,157)
+df$height <- height
+df
+#      name age children height
+# 1    john  28    FALSE    163
+# 2   peter  30     TRUE    177
+# 3 patrick  31     TRUE    163
+# 4   julie  38    FALSE    162
+# 5     bob  35     TRUE    157
+weight <- c(75,65,54,34,78)
+cbind(df,weight)
+#      name age children height weight
+# 1    john  28    FALSE    163     75
+# 2   peter  30     TRUE    177     65
+# 3 patrick  31     TRUE    163     54
+# 4   julie  38    FALSE    162     34
+# 5     bob  35     TRUE    157     78
+tom <- data.frame("Tom",36,FALSE,183,89)
+rbind(df,tom)
+# Error in rbind(deparse.level, ...) : 
+#   numbers of columns of arguments do not match
+df
+#      name age children height
+# 1    john  28    FALSE    163
+# 2   peter  30     TRUE    177
+# 3 patrick  31     TRUE    163
+# 4   julie  38    FALSE    162
+# 5     bob  35     TRUE    157
+sort(df$age)
+# [1] 28 30 31 35 38
+ranks <- order(df$age)
+ranks
+# [1] 1 2 3 5 4
+df$age
+# [1] 28 30 31 38 35
+df[ranks,]
+#      name age children height
+# 1    john  28    FALSE    163
+# 2   peter  30     TRUE    177
+# 3 patrick  31     TRUE    163
+# 5     bob  35     TRUE    157
+# 4   julie  38    FALSE    162
+df[order(df$age,decreasing = TRUE)]
+# Error in `[.data.frame`(df, order(df$age, decreasing = TRUE)) : 
+#   undefined columns selected
+df[order(df$age,decreasing = TRUE),]
+#      name age children height
+# 4   julie  38    FALSE    162
+# 5     bob  35     TRUE    157
+# 3 patrick  31     TRUE    163
+# 2   peter  30     TRUE    177
+# 1    john  28    FALSE    163
+
+
 ----------------------------------------
   
   
