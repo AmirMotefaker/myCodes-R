@@ -252,171 +252,6 @@ typeof(ai)
 # [1] "integer"
 
 
-# Vectors in R
-
-# Create vectors
-vec1<-c(1,2,3,4,5)
-vec1
-# [1] 1 2 3 4 5
-class(vec1)
-# [1] "numeric"
-typeof(vec1)
-# [1] "double"
-
-v2 <- c('hello','world')
-v2
-# [1] "hello" "world"
-print(v2)
-# [1] "hello" "world"
-print(paste0(v2))
-# [1] "hello" "world"
-class(v2)
-# [1] "character"
-
-
-vec2<-c("a","b","c")
-vec2
-# [1] "a" "b" "c"
-class(vec2)
-# [1] "character"
-
-x <- c(0.5,0.6)
-x
-# [1] 0.5 0.6
-
-x <- c(TRUE,FALSE)
-x
-# [1]  TRUE FALSE
-x <- c(T,F)
-x
-# [1]  TRUE FALSE
-x <- 9:29
-x
-#  [1]  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
-x <- c(1+0i, 2+4i)
-x
-# [1] 1+0i 2+4i
-
-vec3<-c(TRUE,FALSE,TRUE)
-vec3
-# [1]  TRUE FALSE  TRUE
-class(vec3)
-# [1] "logical"
-vec1;vec2;vec3
-# [1] 1 2 3 4 5
-# [1] "a" "b" "c"
-# [1]  TRUE FALSE  TRUE
-
-x <- vector("numeric", length = 10) 
-x
-#  [1] 0 0 0 0 0 0 0 0 0 0
-
-
-numbers <- c(1,2,3,4,5,6)
-numbers
-# [1] 1 2 3 4 5 6
-
-ltrs <- c('a','b','c','d')
-print(ltrs)
-# [1] "a" "b" "c" "d"
-
-mixed_vec = c(numbers,ltrs)
-print(mixed_vec)
-#  [1] "1" "2" "3" "4" "5" "6" "a" "b" "c" "d"
-
-num <- 1:10
-num
-#  [1]  1  2  3  4  5  6  7  8  9 10
-class(num)
-# [1] "integer"
-
-num <- c(1:10, 10.5)
-class(num)
-# [1] "numeric"
-
-ltrs = letters[1:10]
-ltrs
-#  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j"
-class(ltrs)
-# [1] "character"
-
-fac = as.factor(ltrs)
-class(fac)
-# [1] "factor"
-fac
-#  [1] a b c d e f g h i j
-# Levels: a b c d e f g h i j
-
-y <- c(1.7 , "a")
-y
-# [1] "1.7" "a"  
-class(y)
-#[1] "character"
-
-
-z<-c(10,"a",TRUE)
-z
-# [1] "10"   "a"    "TRUE"
-class(z)
-# [1] "character"
-
-
-vec5 <- c(FALSE,2)
-vec5
-# [1] 0 2
-class(vec5)
-# [1] "numeric"
-
-
-vec6 <- c('A',1)
-vec6
-# [1] "A" "1"
-class(vec6)
-# [1] "character"
-
-
-vec7<-c(1:20)
-vec7
-#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
-
-
-vec8<-seq(1,20)
-vec8
-#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
-
-
-vec9<-1:25
-vec9
-#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
-
-x <- 0:6
-x
-# [1] 0 1 2 3 4 5 6
-class(x)
-# [1] "integer"
-as.numeric(x)
-# [1] 0 1 2 3 4 5 6
-as.logical(x)
-# [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-as.character(x)
-# [1] "0" "1" "2" "3" "4" "5" "6"
-
-x <- c("a", "b", "c")
-class(x)
-# [1] "character"
-as.numeric(x)
-# [1] NA NA NA
-# Warning message:
-# NAs introduced by coercion 
-as.logical(x)
-# [1] NA NA NA
-as.complex(x)
-# [1] NA NA NA
-# Warning message:
-# NAs introduced by coercion 
-x
-# [1] "a" "b" "c"
-
 
 # Attributes
 x <-1 
@@ -795,31 +630,208 @@ df[order(df$age,decreasing = TRUE),]
 # 1    john  28    FALSE    163
 
 
-----------------------------------------
-  
-  
+
+# Vectors in R
+
+# Create vectors
+vec1<-c(1,2,3,4,5)
+vec1
+# [1] 1 2 3 4 5
+class(vec1)
+# [1] "numeric"
+typeof(vec1)
+# [1] "double"
+
+v2 <- c('hello','world')
+v2
+# [1] "hello" "world"
+print(v2)
+# [1] "hello" "world"
+print(paste0(v2))
+# [1] "hello" "world"
+class(v2)
+# [1] "character"
+
+
+vec2<-c("a","b","c")
+vec2
+# [1] "a" "b" "c"
+class(vec2)
+# [1] "character"
+
+x <- c(0.5,0.6)
+x
+# [1] 0.5 0.6
+
+x <- c(TRUE,FALSE)
+x
+# [1]  TRUE FALSE
+x <- c(T,F)
+x
+# [1]  TRUE FALSE
+x <- 9:29
+x
+#  [1]  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+x <- c(1+0i, 2+4i)
+x
+# [1] 1+0i 2+4i
+
+vec3<-c(TRUE,FALSE,TRUE)
+vec3
+# [1]  TRUE FALSE  TRUE
+class(vec3)
+# [1] "logical"
+vec1;vec2;vec3
+# [1] 1 2 3 4 5
+# [1] "a" "b" "c"
+# [1]  TRUE FALSE  TRUE
+
+vec4 <- c(10,"a",TRUE)
+vec4
+# [1] "10"   "a"    "TRUE"
+class(vec4)
+# [1] "character"
+
+vec5 <- c(FALSE,2)
+vec5
+# [1] 0 2
+class(vec5)
+# [1] "numeric"
+
+vec6 <- c('A',1)
+vec6
+# [1] "A" "1"
+class(vec6)
+# [1] "character"
+
+vec7 <- c(1:20)
+vec7
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
+vec8 <- seq(1,20)
+vec8
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
+vec9 <- 1:25
+vec9
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+
+
+x <- vector("numeric", length = 10) 
+x
+#  [1] 0 0 0 0 0 0 0 0 0 0
+
+
+numbers <- c(1,2,3,4,5,6)
+numbers
+# [1] 1 2 3 4 5 6
+
+ltrs <- c('a','b','c','d')
+print(ltrs)
+# [1] "a" "b" "c" "d"
+
+mixed_vec = c(numbers,ltrs)
+print(mixed_vec)
+#  [1] "1" "2" "3" "4" "5" "6" "a" "b" "c" "d"
+
+num <- 1:10
+num
+#  [1]  1  2  3  4  5  6  7  8  9 10
+class(num)
+# [1] "integer"
+
+num <- c(1:10, 10.5)
+class(num)
+# [1] "numeric"
+
+ltrs = letters[1:10]
+ltrs
+#  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j"
+class(ltrs)
+# [1] "character"
+
+fac = as.factor(ltrs)
+class(fac)
+# [1] "factor"
+fac
+#  [1] a b c d e f g h i j
+# Levels: a b c d e f g h i j
+
+y <- c(1.7 , "a")
+y
+# [1] "1.7" "a"  
+class(y)
+#[1] "character"
+
+
+z<-c(10,"a",TRUE)
+z
+# [1] "10"   "a"    "TRUE"
+class(z)
+# [1] "character"
+
+
+vec5 <- c(FALSE,2)
+vec5
+# [1] 0 2
+class(vec5)
+# [1] "numeric"
+
+
+vec6 <- c('A',1)
+vec6
+# [1] "A" "1"
+class(vec6)
+# [1] "character"
+
+
+vec7<-c(1:20)
+vec7
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
+
+vec8<-seq(1,20)
+vec8
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
+
+vec9<-1:25
+vec9
+#  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+
+
 #Create a vector with odd values b/w 1 to 20
 
 odd_value<-seq(1,20,2)
 odd_value
+#  [1]  1  3  5  7  9 11 13 15 17 19
 
 #Create a vector with even values b/w 1 to 20
 
 even_value<-seq(2,20,2)
 even_value
+#  [1]  2  4  6  8 10 12 14 16 18 20
+
 
 #Create vector with 10 odd values starting from 20
 
 vec10<-seq(from=21,by=2,length.out=10)
 vec10
+#  [1] 21 23 25 27 29 31 33 35 37 39
+
 
 # Naming your vectors using names() function
 
 temperature <- c(72,71,68,73,69,75,71)
 temperature
+# [1] 72 71 68 73 69 75 71
+
 
 names(temperature) <- c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
 temperature
+# Mon Tue Wed Thu Fri Sat Sun 
+#  72  71  68  73  69  75  71
+
 
 # Another way to name your vectors
 
@@ -827,11 +839,18 @@ days <- c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
 temperature1 <- c(40,45,60,30,36,12,29)
 names(temperature1) <- days
 temperature1
+# Mon Tue Wed Thu Fri Sat Sun 
+#  40  45  60  30  36  12  29 
+
 
 # One more way to give names to each price values
 price<-seq(100,220,20)
 names(price)<-paste0("p",1:7)
 price
+#  p1  p2  p3  p4  p5  p6  p7 
+# 100 120 140 160 180 200 220 
+
+
 
 # Basic operation on Vectors
 
@@ -840,25 +859,45 @@ v2 <- c(5,6,7)
 
 # Add 2 vectors
 v1+v2
+# [1]  7  7 11
+
 
 # Subtract 2 vectors
 v2-v1
+# [1] 3 5 3
+
 
 # Multiply 2 vectors
 v1*v2
+# [1] 10  6 28
+
 
 # Divide 2 vectors
 v1/v2
+# [1] 0.4000000 0.1666667 0.5714286
+
 
 # Using basic maths functions with vectors
 v1
 
 sum(v1) # Add the values in a vector
+# [1] 7
+
 sd(v1) # Finds the standard deviation
+# [1] 1.527525
+
 var(v1) # To display the variance
+# [1] 2.333333
+
 prod(v1) # Give the product of the vector values
+# [1] 8
+
 max(v1) # Returns the maximum value 
+# [1] 4
+
 min(v1) # Returns the minimun value
+# [1] 1
+
 
 # Comparing vectors using comparision operators
 
@@ -866,40 +905,110 @@ v1 <- c(19,12,45)
 v2 <- c(19,20,30)
 
 v1<v2
+# [1] FALSE  TRUE FALSE
+
 v1>v2
+# [1] FALSE FALSE  TRUE
+
 v1!=v2
+# [1] FALSE  TRUE  TRUE
+
 v1==v2
+# [1]  TRUE FALSE FALSE
 
 v <- c(1,2,3,4,5)
 v<3
+# [1]  TRUE  TRUE FALSE FALSE FALSE
+
 
 # Vector slicing and indexing
 
 price1<-seq(550,670,20)
 names(price1)<-paste0("p",1:7)
 price1
+#   p1  p2  p3  p4  p5  p6  p7 
+# 550 570 590 610 630 650 670 
 
 #1. Using index position
 price1[3]
+#  p3 
+# 590 
 price1[3:4]
+#  p3  p4 
+# 590 610 
 price1[c(1,4)]
+#  p1  p4 
+# 550 610 
 price1[c(2,6)]
+#  p2  p6 
+# 570 650
 
 #2. Indexing with names
 price1[c("p3")]
+#  p3 
+# 590 
 price1[c("p3","p4","p7")]
+#  p3  p4  p7 
+# 590 610 670
 price1["p3"]
+#  p3 
+# 590
 
 #3.Using logical position
 price1[c(T,F,T,T,F,F,F)]
+#  p1  p3  p4 
+# 550 590 610 
 price1[c(T,F)]
+#  p1  p3  p5  p7 
+# 550 590 630 670 
 
 #4.Using exclude position method
 price1[-2]
+#  p1  p3  p4  p5  p6  p7 
+# 550 590 610 630 650 670
 price1[c(-2,-5)]
+#  p1  p3  p4  p6  p7 
+# 550 590 610 650 670
 
 #5. Using comparision operator
 price1[price1>600]
+#  p4  p5  p6  p7 
+# 610 630 650 670
 
 filter <- price1>600
 price1[filter]
+#  p4  p5  p6  p7 
+# 610 630 650 670
+
+
+x <- 0:6
+x
+# [1] 0 1 2 3 4 5 6
+class(x)
+# [1] "integer"
+as.numeric(x)
+# [1] 0 1 2 3 4 5 6
+as.logical(x)
+# [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+as.character(x)
+# [1] "0" "1" "2" "3" "4" "5" "6"
+
+x <- c("a", "b", "c")
+class(x)
+# [1] "character"
+as.numeric(x)
+# [1] NA NA NA
+# Warning message:
+# NAs introduced by coercion 
+as.logical(x)
+# [1] NA NA NA
+as.complex(x)
+# [1] NA NA NA
+# Warning message:
+# NAs introduced by coercion 
+x
+# [1] "a" "b" "c"
+
+
+
+---------------------------------------------
