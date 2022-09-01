@@ -1332,3 +1332,147 @@ rowSums(stock.matrix) # Returns the sum for each row
 rowMeans(stock.matrix) # Returns the mean for each row
 # stock1 stock2 
 # 453.2  231.4
+
+
+
+# Adding rows and columns to a matrix using rbind() and cbind() function
+
+stock3 <- c(150,151,149,120,114)
+total_stock <- rbind(stock.matrix,stock3)
+total_stock
+#        Mon Tue Wed Thu Fri
+# stock1 450 451 452 445 468
+# stock2 230 231 232 236 228
+# stock3 150 151 149 120 114
+
+avg <- rowMeans(total_stock)
+avg
+# stock1 stock2 stock3 
+#  453.2  231.4  136.8
+
+total_stock <- cbind(total_stock,avg)
+total_stock
+#        Mon Tue Wed Thu Fri   avg
+# stock1 450 451 452 445 468 453.2
+# stock2 230 231 232 236 228 231.4
+# stock3 150 151 149 120 114 136.8
+
+
+# Matrix selection and indexing
+
+student<-matrix(c(20,30,NA,70,22,28,36,80,24,26,32,75,26,24,NA,50),nrow=4,ncol=4,byrow=T)
+dimnames(student)<-list(c("John","Mathew","Sam","Alice"),c("Phy","Chem","Bio","Maths"))
+student
+#        Phy Chem Bio Maths
+# John    20   30  NA    70
+# Mathew  22   28  36    80
+# Sam     24   26  32    75
+# Alice   26   24  NA    50
+
+# Extraction of columns
+
+student[,1]
+# John Mathew    Sam  Alice 
+#   20     22     24     26 
+student[,1:2]
+#        Phy Chem
+# John    20   30
+# Mathew  22   28
+# Sam     24   26
+# Alice   26   24
+# student[,c(1,3)]
+
+# Extraction of rows
+
+student[1,]
+# John Mathew    Sam  Alice 
+#   20     22     24     26
+student[1:2,]
+#        Phy Chem Bio Maths
+# John    20   30  NA    70
+# Mathew  22   28  36    80
+student[c(1,3),]
+#      Phy Chem Bio Maths
+# John  20   30  NA    70
+# Sam   24   26  32    75
+student[2,2]
+# [1] 28
+student[2,2:4]
+# Chem   Bio Maths 
+#   28    36    80
+student
+#        Phy Chem Bio Maths
+# John    20   30  NA    70
+# Mathew  22   28  36    80
+# Sam     24   26  32    75
+# Alice   26   24  NA    50
+
+student[3:4,2:3]
+#       Chem Bio
+# Sam     26  32
+# Alice   24  NA
+student[2:4,c(1,4)]
+#        Phy Maths
+# Mathew  22    80
+# Sam     24    75
+# Alice   26    50
+
+#Find John's score in Chem and Bio
+student["John",2:3]
+# Chem  Bio 
+#   30   NA
+
+#Find John's and Sam's score in maths
+student[c("John","Sam"),4]
+# John  Sam 
+#   70   75
+
+
+#Find maths & Bio score of Sam and Alice
+student[c("Sam","Alice"),3:4]
+#       Bio Maths
+# Sam    32    75
+# Alice  NA    50
+
+#Find average score of John
+mean(student[c("John"),],na.rm=T)
+# [1] 40
+
+
+#Find the average and the total score for all the students
+apply(student,1,mean,na.rm=T) #here 1 stands for the row and 2 is for columns
+#     John   Mathew      Sam    Alice 
+# 40.00000 41.50000 39.25000 33.33333 
+help(apply)
+apply(student,1,sum,na.rm=T)
+# John Mathew    Sam  Alice 
+#  120    166    157    100
+
+student
+#        Phy Chem Bio Maths
+# John    20   30  NA    70
+# Mathew  22   28  36    80
+# Sam     24   26  32    75
+# Alice   26   24  NA    50
+
+passing_score<-c(25,25,25,70)
+passing_score
+# [1] 25 25 25 70
+
+
+#Find in how many subjects Alice has passed
+pass<-(student[c("Alice"),]>passing_score)
+pass
+#  Phy  Chem   Bio Maths 
+# TRUE FALSE    NA FALS
+sum(pass, na.rm = T)
+# [1] 1
+
+
+#Find in how many subjects Sam has passed
+pass1<-(student[c("Sam"),]>passing_score)
+pass1
+#   Phy  Chem   Bio Maths 
+# FALSE  TRUE  TRUE  TRUE 
+sum(pass1, na.rm = T)
+# [1] 3
