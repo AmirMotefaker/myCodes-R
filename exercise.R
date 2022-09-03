@@ -1476,3 +1476,187 @@ pass1
 # FALSE  TRUE  TRUE  TRUE 
 sum(pass1, na.rm = T)
 # [1] 3
+
+
+#----------DataFrames in R---------------#
+
+# Check the list of pre-loaded dataset
+
+data()
+data(AirPassengers)
+head(AirPassengers)
+# [1] 112 118 132 129 121 135
+
+data(iris)
+head(iris)
+#   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+# 1          5.1         3.5          1.4         0.2  setosa
+# 2          4.9         3.0          1.4         0.2  setosa
+# 3          4.7         3.2          1.3         0.2  setosa
+# 4          4.6         3.1          1.5         0.2  setosa
+# 5          5.0         3.6          1.4         0.2  setosa
+# 6          5.4         3.9          1.7         0.4  setosa
+View(iris)
+View(state.x77)
+View(USPersonalExpenditure)
+tail(USPersonalExpenditure)
+#                       1940   1945  1950 1955  1960
+# Food and Tobacco    22.200 44.500 59.60 73.2 86.80
+# Household Operation 10.500 15.500 29.00 36.5 46.20
+# Medical and Health   3.530  5.760  9.71 14.0 21.10
+# Personal Care        1.040  1.980  2.45  3.4  5.40
+# Private Education    0.341  0.974  1.80  2.6  3.64
+
+# Check the statistical summary of a dataset
+summary(iris)
+#  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species  
+# Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100   setosa    :50  
+# 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300   versicolor:50  
+# Median :5.800   Median :3.000   Median :4.350   Median :1.300   virginica :50  
+# Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199                  
+# 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800                  
+# Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500 
+
+# Check the structure of a dataset
+str(iris)
+# 'data.frame':	150 obs. of  5 variables:
+# $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+# $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+# $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+# $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+# $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+
+# Creating a data frame using data.frame() function
+
+days <- c('mon','tue','wed','thu','fri')
+temp <- c(25.6,30.1,45,37.3,41.2)
+rain <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
+
+df <- data.frame(days,temp,rain)
+print(df)
+#   days temp  rain
+# 1  mon 25.6  TRUE
+# 2  tue 30.1  TRUE
+# 3  wed 45.0 FALSE
+# 4  thu 37.3 FALSE
+# 5  fri 41.2  TRUE
+summary(df)
+# days                temp          rain        
+# Length:5           Min.   :25.60   Mode :logical  
+# Class :character   1st Qu.:30.10   FALSE:2        
+# Mode  :character   Median :37.30   TRUE :3        
+#                    Mean   :35.84                  
+#                    3rd Qu.:41.20                  
+#                    Max.   :45.00 
+str(df)
+# 'data.frame':	5 obs. of  3 variables:
+# $ days: chr  "mon" "tue" "wed" "thu" ...
+# $ temp: num  25.6 30.1 45 37.3 41.2
+# $ rain: logi  TRUE TRUE FALSE FALSE TRUE
+
+
+# Dataframe indexing
+
+df
+#   days temp  rain
+# 1  mon 25.6  TRUE
+# 2  tue 30.1  TRUE
+# 3  wed 45.0 FALSE
+# 4  thu 37.3 FALSE
+# 5  fri 41.2  TRUE
+df[1,] # Extract the first row
+#   days temp rain
+# 1  mon 25.6 TRUE
+df[,2] # Extract the second column
+# [1] 25.6 30.1 45.0 37.3 41.2
+
+
+# Selecting using column names
+df[,'temp'] # Extracts all the temperature values
+# [1] 25.6 30.1 45.0 37.3 41.2
+
+df[2:4,c('days','temp')] # extracts the 2nd, 3rd and 4th rows for days and temp
+#   days temp
+# 2  tue 30.1
+# 3  wed 45.0
+# 4  thu 37.3
+
+# Use dollar sign if you want all the values of a particular column 
+
+df$days
+# [1] "mon" "tue" "wed" "thu" "fri"
+
+df$rain
+# [1]  TRUE  TRUE FALSE FALSE  TRUE
+
+
+# Use bracket notation to return a data frame format of the same information
+df['rain']
+#    rain
+# 1  TRUE
+# 2  TRUE
+# 3 FALSE
+# 4 FALSE
+# 5  TRUE
+df['temp']
+#   temp
+# 1 25.6
+# 2 30.1
+# 3 45.0
+# 4 37.3
+# 5 41.2
+
+# Filtering dataframes using a subset function
+
+df
+#   days temp  rain
+# 1  mon 25.6  TRUE
+# 2  tue 30.1  TRUE
+# 3  wed 45.0 FALSE
+# 4  thu 37.3 FALSE
+# 5  fri 41.2  TRUE
+subset(df,subset=rain==TRUE) # Returns all the columns where it rained 
+#   days temp rain
+# 1  mon 25.6 TRUE
+# 2  tue 30.1 TRUE
+# 5  fri 41.2 TRUE
+subset(df,subset= temp>25) # Returns all the columns where temperature>25
+#   days temp  rain
+# 1  mon 25.6  TRUE
+# 2  tue 30.1  TRUE
+# 3  wed 45.0 FALSE
+# 4  thu 37.3 FALSE
+# 5  fri 41.2  TRUE
+
+# Sorting dataframes using order function
+
+sorted.temp <- order(df['temp'])
+df[sorted.temp,] # Returns the all the columns with temp sorted in ascending order
+#   days temp  rain
+# 1  mon 25.6  TRUE
+# 2  tue 30.1  TRUE
+# 4  thu 37.3 FALSE
+# 5  fri 41.2  TRUE
+# 3  wed 45.0 FALSE
+sorted.temp
+# [1] 1 2 4 5 3
+
+
+desc.temp <- order(-df['temp']) # Returns the all the columns with temp sorted in descending order
+df[desc.temp,]
+#   days temp  rain
+# 3  wed 45.0 FALSE
+# 5  fri 41.2  TRUE
+# 4  thu 37.3 FALSE
+# 2  tue 30.1  TRUE
+# 1  mon 25.6  TRUE
+
+# Another method to sort
+sort.temp <- order(df$temp)
+df[sort.temp,]
+#   days temp  rain
+# 1  mon 25.6  TRUE
+# 2  tue 30.1  TRUE
+# 4  thu 37.3 FALSE
+# 5  fri 41.2  TRUE
+# 3  wed 45.0 FALSE
