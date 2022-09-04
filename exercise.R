@@ -1660,3 +1660,205 @@ df[sort.temp,]
 # 4  thu 37.3 FALSE
 # 5  fri 41.2  TRUE
 # 3  wed 45.0 FALSE
+
+
+# Merging Data Frames
+
+authors <- data.frame(
+  surname = I(c("Tukey", "Venables", "Tierney", "Ripley", "McNeil")),
+  nationality = c("US", "Australia", "US", "UK", "Australia"),
+  deceased = c("yes", rep("no", 4)))
+
+books <- data.frame(
+  name = I(c("Tukey", "Venables", "Tierney",
+             "Ripley", "Ripley", "McNeil", "R Core")),
+  title = c("Exploratory Data Analysis",
+            "Modern Applied Statistics ...",
+            "LISP-STAT",
+            "Spatial Statistics", "Stochastic Simulation",
+            "Interactive Data Analysis",
+            "An Introduction to R"),
+  other.author = c(NA, "Ripley", NA, NA, NA, NA,
+                   "Venables & Smith"))
+
+authors
+#    surname nationality deceased
+# 1    Tukey          US      yes
+# 2 Venables   Australia       no
+# 3  Tierney          US       no
+# 4   Ripley          UK       no
+# 5   McNeil   Australia       no
+books
+#       name                         title     other.author
+# 1    Tukey     Exploratory Data Analysis             <NA>
+# 2 Venables Modern Applied Statistics ...           Ripley
+# 3  Tierney                     LISP-STAT             <NA>
+# 4   Ripley            Spatial Statistics             <NA>
+# 5   Ripley         Stochastic Simulation             <NA>
+# 6   McNeil     Interactive Data Analysis             <NA>
+# 7   R Core          An Introduction to R Venables & Smith
+
+(m1 <- merge(authors, books, by.x = "surname", by.y = "name"))
+#    surname nationality deceased                         title other.author
+# 1   McNeil   Australia       no     Interactive Data Analysis         <NA>
+# 2   Ripley          UK       no            Spatial Statistics         <NA>
+# 3   Ripley          UK       no         Stochastic Simulation         <NA>
+# 4  Tierney          US       no                     LISP-STAT         <NA>
+# 5    Tukey          US      yes     Exploratory Data Analysis         <NA>
+# 6 Venables   Australia       no Modern Applied Statistics ...       Ripley
+
+
+# Example to manipulate a dataframe 
+
+salesreport<-data.frame(Id=101:110,
+                        Product=c("A","B"),
+                        Unitprice=as.integer(runif(10,100,200)),
+                        Qty=as.integer(runif(10,10,20))
+)
+salesreport
+#     Id Product Unitprice Qty
+# 1  101       A       172  14
+# 2  102       B       131  16
+# 3  103       A       108  15
+# 4  104       B       180  12
+# 5  105       A       182  17
+# 6  106       B       145  16
+# 7  107       A       185  17
+# 8  108       B       131  15
+# 9  109       A       136  19
+# 10 110       B       197  19
+
+
+#1.Transpose data frame
+transpose.salesreport<-t(salesreport)
+View(transpose.salesreport)
+head(transpose.salesreport)
+#           [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9]  [,10]
+# Id        "101" "102" "103" "104" "105" "106" "107" "108" "109" "110"
+# Product   "A"   "B"   "A"   "B"   "A"   "B"   "A"   "B"   "A"   "B"  
+# Unitprice "172" "131" "108" "180" "182" "145" "185" "131" "136" "197"
+# Qty       "14"  "16"  "15"  "12"  "17"  "16"  "17"  "15"  "19"  "19"
+
+#2.Sorting of data frame
+salesreport[order(salesreport$Unitprice),]
+#     Id Product Unitprice Qty
+# 3  103       A       108  15
+# 2  102       B       131  16
+# 8  108       B       131  15
+# 9  109       A       136  19
+# 6  106       B       145  16
+# 1  101       A       172  14
+# 4  104       B       180  12
+# 5  105       A       182  17
+# 7  107       A       185  17
+# 10 110       B       197  19
+salesreport[order(salesreport$Unitprice,decreasing = T),]
+#     Id Product Unitprice Qty
+# 10 110       B       197  19
+# 7  107       A       185  17
+# 5  105       A       182  17
+# 4  104       B       180  12
+# 1  101       A       172  14
+# 6  106       B       145  16
+# 9  109       A       136  19
+# 2  102       B       131  16
+# 8  108       B       131  15
+# 3  103       A       108  15
+
+salesreport[order(salesreport$Product,-salesreport$Unitprice),]
+#     Id Product Unitprice Qty
+# 7  107       A       185  17
+# 5  105       A       182  17
+# 1  101       A       172  14
+# 9  109       A       136  19
+# 3  103       A       108  15
+# 10 110       B       197  19
+# 4  104       B       180  12
+# 6  106       B       145  16
+# 2  102       B       131  16
+# 8  108       B       131  15
+
+#3.Subsetting data frame
+
+subset.ProductA<-subset(salesreport,Product=="A")
+subset.ProductA
+#    Id Product Unitprice Qty
+# 1 101       A       172  14
+# 3 103       A       108  15
+# 5 105       A       182  17
+# 7 107       A       185  17
+# 9 109       A       136  19
+
+# Extract the rows for which Product is A and Unitprice > 150
+subset.salesreport<-subset(salesreport,Product=="A" & Unitprice>150)
+subset.salesreport
+#    Id Product Unitprice Qty
+# 1 101       A       172  14
+# 5 105       A       182  17
+# 7 107       A       185  17
+
+# Extract only the first and the fourth column Product is A and Unitprice > 150
+subset.salesreport<-subset(salesreport,Product=="A" & Unitprice>150,c(1,4))
+subset.salesreport
+#    Id Qty
+# 1 101  14
+# 5 105  17
+# 7 107  17
+
+#4.Merging of data frame
+
+setA<-subset(salesreport,Product=="A")
+setB<-subset(salesreport,Product=="B")
+setA
+#    Id Product Unitprice Qty
+# 1 101       A       172  14
+# 3 103       A       108  15
+# 5 105       A       182  17
+# 7 107       A       185  17
+# 9 109       A       136  19
+setB
+#     Id Product Unitprice Qty
+# 2  102       B       131  16
+# 4  104       B       180  12
+# 6  106       B       145  16
+# 8  108       B       131  15
+# 10 110       B       197  19
+cbind(setA,setB)
+#    Id Product Unitprice Qty  Id Product Unitprice Qty
+# 1 101       A       172  14 102       B       131  16
+# 3 103       A       108  15 104       B       180  12
+# 5 105       A       182  17 106       B       145  16
+# 7 107       A       185  17 108       B       131  15
+# 9 109       A       136  19 110       B       197  19
+rbind(setA,setB)
+#     Id Product Unitprice Qty
+# 1  101       A       172  14
+# 3  103       A       108  15
+# 5  105       A       182  17
+# 7  107       A       185  17
+# 9  109       A       136  19
+# 2  102       B       131  16
+# 4  104       B       180  12
+# 6  106       B       145  16
+# 8  108       B       131  15
+# 10 110       B       197  19
+
+#5.Aggregate function
+#Total quantity sold for each product
+
+salesreport
+#     Id Product Unitprice Qty
+# 1  101       A       172  14
+# 2  102       B       131  16
+# 3  103       A       108  15
+# 4  104       B       180  12
+# 5  105       A       182  17
+# 6  106       B       145  16
+# 7  107       A       185  17
+# 8  108       B       131  15
+# 9  109       A       136  19
+# 10 110       B       197  19
+aggregate(salesreport$Qty,list(salesreport$Prod),sum,na.rm=T)
+#   Group.1  x
+# 1       A 82
+# 2       B 78
