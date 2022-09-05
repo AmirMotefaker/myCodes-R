@@ -1862,3 +1862,111 @@ aggregate(salesreport$Qty,list(salesreport$Prod),sum,na.rm=T)
 #   Group.1  x
 # 1       A 82
 # 2       B 78
+
+
+
+
+#----------------------Lists in R------------------#
+
+list_1<-list(x=c(10,20,30),
+             y=c("a","b","c"),
+             z=c(TRUE,FALSE))
+list_1
+# $x
+# [1] 10 20 30
+
+# $y
+# [1] "a" "b" "c"
+
+# $z
+# [1]  TRUE FALSE
+
+list2<-list(vec=seq(1:10),
+            mat=matrix(1:9,3,3),
+            lis=list(a=10,b=20))
+
+list2
+# $vec
+#  [1]  1  2  3  4  5  6  7  8  9 10
+
+# $mat
+#      [,1] [,2] [,3]
+# [1,]    1    4    7
+# [2,]    2    5    8
+# [3,]    3    6    9
+
+# $lis
+# $lis$a
+# [1] 10
+
+# $lis$b
+# [1] 20
+
+
+# Recursive variable->Variable that can store values of its own type.
+is.recursive(list2)
+# [1] TRUE
+
+
+# Indexing of list
+
+list2[2] # By index
+# $mat
+#      [,1] [,2] [,3]
+# [1,]    1    4    7
+# [2,]    2    5    8
+# [3,]    3    6    9
+list2$mat # By dollar notation
+#      [,1] [,2] [,3]
+# [1,]    1    4    7
+# [2,]    2    5    8
+# [3,]    3    6    9
+list2['vec'] # By name
+# $vec
+#  [1]  1  2  3  4  5  6  7  8  9 10
+list2$lis[2] #3rd element 2nd value
+# $b
+# [1] 20
+list2[[3]][2] #3rd element 2nd value
+# $b
+# [1] 20
+
+length(list2)
+# [1] 3
+
+class(list2)
+# [1] "list"
+
+
+#Conversion of vectors to list
+
+price<-c(10,20,30)
+pricelist<-as.list(price)
+pricelist
+# [[1]]
+# [1] 10
+
+# [[2]]
+# [1] 20
+
+# [[3]]
+# [1] 30
+price
+# [1] 10 20 30
+
+
+#Conversion of list to vector
+
+newPrice<-unlist(pricelist)
+newPrice
+# [1] 10 20 30
+
+
+# Use dim function to convert vectors to matrix
+
+price1<-c(10,20,30,40)
+dim(price1)<-c(2,2)
+price1
+#      [,1] [,2]
+# [1,]   10   30
+# [2,]   20   40
