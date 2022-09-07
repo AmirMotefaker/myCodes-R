@@ -2133,3 +2133,147 @@ df[(df['mpg'] >= 20) & (df['hp'] > 100),]
 
 
 # ----------Flow Control -----------------#
+#----------if esle, else if---------------#
+
+# Single condition check
+hot <- FALSE
+temp <- 50
+
+if (temp > 60){
+  hot <- TRUE
+}
+hot
+# [1] FALSE
+
+
+# Change the temp value
+temp <- 100
+
+if (temp > 60){
+  hot <- TRUE
+}
+
+hot
+# [1] TRUE
+
+
+# Else statement
+
+score <- 63
+
+if (score > 80){
+  print("It is a good score!")
+} else{
+  print("Its not a good score!")
+}
+# [1] "Its not a good score!"
+
+
+# Else if statement
+
+score <- 63
+
+if (score > 80){
+  print("Good score!")
+} else if(score>60 & score<80){
+  print('Decent score!')
+} else if(score<60 & score >33){
+  print("Average score!")
+} else{
+  print("Poor!")
+}
+# [1] "Decent score!"
+
+
+# Example 1
+status<-function(marks)
+{
+  result="Not Defined"
+  if(marks>50) result="PASS"
+  message("Your result is"," ",result)
+}
+status(60)
+# Your result is PASS
+status(30)
+# Your result is Not Defined
+
+
+# Example 2
+
+status<-function(age)
+{
+  ageGrp="Not Defined"
+  vote="Not Defined"
+  if(age>=18)
+  {
+    ageGrp="ADULT"
+    vote="YES"
+  }
+  message("Your age group is ",ageGrp)
+  message("Voting status is ",vote)
+}
+status(20)
+# Your age group is ADULT
+# Voting status is YES
+status(15)
+# Your age group is Not Defined
+# Voting status is Not Defined
+
+
+#--------------While Loops----------------#
+
+# Example
+
+x <- 0
+
+while(x < 10){
+  
+  cat('x is currently: ',x)
+  print(' x is still less than 10, adding 1 to x')
+  
+  # add one to x
+  x <- x+1
+  if(x==10){
+    print("x is equal to 10! Terminating loop")
+  }
+}
+# x is currently:  0[1] " x is still less than 10, adding 1 to x"
+# x is currently:  1[1] " x is still less than 10, adding 1 to x"
+# x is currently:  2[1] " x is still less than 10, adding 1 to x"
+# x is currently:  3[1] " x is still less than 10, adding 1 to x"
+# x is currently:  4[1] " x is still less than 10, adding 1 to x"
+# x is currently:  5[1] " x is still less than 10, adding 1 to x"
+# x is currently:  6[1] " x is still less than 10, adding 1 to x"
+# x is currently:  7[1] " x is still less than 10, adding 1 to x"
+# x is currently:  8[1] " x is still less than 10, adding 1 to x"
+# x is currently:  9[1] " x is still less than 10, adding 1 to x"
+# [1] "x is equal to 10! Terminating loop"
+
+
+#---------Using break statement in a while loop----------#
+
+x <- 0
+
+while(x < 5){
+  
+  cat('x is currently: ',x)
+  print(' x is still less than 5, adding 1 to x')
+  
+  # add one to x
+  x <- x+1
+  if(x==5){
+    print("x is equal to 5!")
+    break
+    print("I will also print, woohoo!")
+  }
+}
+# x is currently:  0[1] " x is still less than 5, adding 1 to x"
+# x is currently:  1[1] " x is still less than 5, adding 1 to x"
+# x is currently:  2[1] " x is still less than 5, adding 1 to x"
+# x is currently:  3[1] " x is still less than 5, adding 1 to x"
+# x is currently:  4[1] " x is still less than 5, adding 1 to x"
+# [1] "x is equal to 5!"
+
+
+
+#-----------For Loops----------------#
