@@ -2277,3 +2277,160 @@ while(x < 5){
 
 
 #-----------For Loops----------------#
+
+vec <- c(1,2,3,4,5)
+for (temp_var in vec){
+  print(temp_var)
+}
+# [1] 1
+# [1] 2
+# [1] 3
+# [1] 4
+# [1] 5
+
+# Another process
+for (i in 1:length(vec)){
+  print(vec[i])
+}
+# [1] 1
+# [1] 2
+# [1] 3
+# [1] 4
+# [1] 5
+
+# For loop over a list
+
+li <- list(1,2,3,4,5)
+
+for (temp_var in li){
+  print(temp_var)
+}
+# [1] 1
+# [1] 2
+# [1] 3
+# [1] 4
+# [1] 5
+
+
+for (i in 1:length(li)){
+  print(li[[i]]) # Remember to use double brackets!
+}
+# [1] 1
+# [1] 2
+# [1] 3
+# [1] 4
+# [1] 5
+
+# For loop to print a matrix
+
+mat <- matrix(1:25,nrow=5)
+mat
+#      [,1] [,2] [,3] [,4] [,5]
+# [1,]    1    6   11   16   21
+# [2,]    2    7   12   17   22
+# [3,]    3    8   13   18   23
+# [4,]    4    9   14   19   24
+# [5,]    5   10   15   20   25
+
+for (num in mat){
+  print(num)
+}
+# [1] 1
+# [1] 2
+# [1] 3
+# [1] 4
+# [1] 5
+# [1] 6
+# [1] 7
+# [1] 8
+# [1] 9
+# [1] 10
+# [1] 11
+# [1] 12
+# [1] 13
+# [1] 14
+# [1] 15
+# [1] 16
+# [1] 17
+# [1] 18
+# [1] 19
+# [1] 20
+# [1] 21
+# [1] 22
+# [1] 23
+# [1] 24
+# [1] 25
+
+# Example to print the square and square roots of numbers b/w 1-25
+
+for(i in 1:25)
+{
+  sq=i*i
+  sqroot=sqrt(i)
+  message("i=",i,"sq=",sq,"sqroot=",sqroot)
+  
+}
+# i=1sq=1sqroot=1
+# i=2sq=4sqroot=1.4142135623731
+# i=3sq=9sqroot=1.73205080756888
+# i=4sq=16sqroot=2
+# i=5sq=25sqroot=2.23606797749979
+# i=6sq=36sqroot=2.44948974278318
+# i=7sq=49sqroot=2.64575131106459
+# i=8sq=64sqroot=2.82842712474619
+# i=9sq=81sqroot=3
+# i=10sq=100sqroot=3.16227766016838
+# i=11sq=121sqroot=3.3166247903554
+# i=12sq=144sqroot=3.46410161513775
+# i=13sq=169sqroot=3.60555127546399
+# i=14sq=196sqroot=3.74165738677394
+# i=15sq=225sqroot=3.87298334620742
+# i=16sq=256sqroot=4
+# i=17sq=289sqroot=4.12310562561766
+# i=18sq=324sqroot=4.24264068711928
+# i=19sq=361sqroot=4.35889894354067
+# i=20sq=400sqroot=4.47213595499958
+# i=21sq=441sqroot=4.58257569495584
+# i=22sq=484sqroot=4.69041575982343
+# i=23sq=529sqroot=4.79583152331272
+# i=24sq=576sqroot=4.89897948556636
+# i=25sq=625sqroot=5
+
+
+#R function to find the balance in a bank a/c after n years if I have deposited
+#x amount in the beginning. Bank gives interest at rate of 8% p.a.
+
+get_finalbal<-function(amt,year,rate)
+{
+  for(i in 1:year)
+  {
+    interest=round(amt*rate/100,2)
+    finalamt=amt+interest
+    message("Year=",i,"amt=",amt,"Interest=",interest,"final amt=",finalamt)
+    amt=finalamt
+  }
+  return(finalamt)
+}
+get_finalbal(5000,5,8)
+# Year=1amt=5000Interest=400final amt=5400
+# Year=2amt=5400Interest=432final amt=5832
+# Year=3amt=5832Interest=466.56final amt=6298.56
+# Year=4amt=6298.56Interest=503.88final amt=6802.44
+# Year=5amt=6802.44Interest=544.2final amt=7346.64
+# [1] 7346.64
+get_finalbal(10000,10,5)
+# Year=1amt=10000Interest=500final amt=10500
+# Year=2amt=10500Interest=525final amt=11025
+# Year=3amt=11025Interest=551.25final amt=11576.25
+# Year=4amt=11576.25Interest=578.81final amt=12155.06
+# Year=5amt=12155.06Interest=607.75final amt=12762.81
+# Year=6amt=12762.81Interest=638.14final amt=13400.95
+# Year=7amt=13400.95Interest=670.05final amt=14071
+# Year=8amt=14071Interest=703.55final amt=14774.55
+# Year=9amt=14774.55Interest=738.73final amt=15513.28
+# Year=10amt=15513.28Interest=775.66final amt=16288.94
+# [1] 16288.94
+
+
+
+#--------------Functions in R--------------------#
