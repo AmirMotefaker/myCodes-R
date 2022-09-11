@@ -2434,3 +2434,169 @@ get_finalbal(10000,10,5)
 
 
 #--------------Functions in R--------------------#
+# Simple function, no inputs!
+hello_world <- function(){
+  print('hello World in R!')
+}
+hello_world()
+# [1] "hello World in R!"
+
+
+# Function with a single argument
+
+hello_name <- function(name){
+  print(paste('hello ',name))
+}
+hello_name('John')
+# [1] "hello  John"
+
+
+# Function to add 2 numbers
+
+add_num <- function(num1,num2){
+  print(num1+num2)
+}
+add_num(30,40)
+# [1] 70
+
+
+# Add a vector to a number
+
+add_num(c(10,20,30),5)
+# [1] 15 25 35
+
+
+# Function with default argument values
+
+hello_name <- function(name='Rick'){
+  print(paste('Hello ',name))
+}
+hello_name()
+# [1] "Hello  Rick"
+
+hello_name('Sam')
+# [1] "Hello  Sam"
+
+
+# Return the value from a function
+
+full_name <- function(name='Sachin',title='Tendulkar'){
+  return(paste(name,' ',title))
+}
+full_name()
+# [1] "Sachin   Tendulkar"
+
+
+full_name1 <- full_name('Don', 'Bradman') 
+full_name1
+# [1] "Don   Bradman"
+
+
+# Scope of a variable in a function
+
+v <- "I'm global variable"
+stuff <- "I'm global stuff"
+
+fun <- function(stuff){
+  print(v) 
+  stuff <- 'Reassign stuff inside the function'
+  print(stuff)
+}
+
+print(v)
+# [1] "I'm global variable"
+
+print(stuff)
+# [1] "I'm global stuff"
+
+fun(stuff) # Reassignment only happens in scope of function
+# [1] "Reassign stuff inside the function"
+
+print(stuff)
+# [1] "I'm global stuff"
+
+
+# Create a function to find the final amount to be paid by a customer after 
+#adding 20% tax to the purchased amount.
+
+amount<-function(x=100)
+{
+  t=x+x*(20/100)
+  return(t)
+}
+amount(100)
+# [1] 120
+
+
+#--------------------
+
+amount1<-function(amt)
+{
+  if(amt>0) famt=amt+amt*(20/100) 
+  if(amt<=0) famt=amt
+  return(famt)
+  
+}  
+amount1(100)
+# [1] 120
+
+
+# Check the argument and the body of a function
+
+args(amount1)
+# function (amt) 
+# NULL
+body(amount1)
+# {
+# if (amt > 0) 
+#   famt = amt + amt * (20/100)
+# if (amt <= 0) 
+#   famt = amt
+# return(famt)
+# }
+
+# Example to understand the scope
+
+f1<-function(x)
+{
+  y=10
+  g1=function(x)
+  {
+    y+(x*x)
+  }
+  
+  g1(x)
+}
+
+f1(10)
+# [1] 110
+
+
+#------------
+
+g2<-function(x)
+{
+  y+(x*x)
+}
+f2<-function(x)
+{
+  y=10
+  g2(x)
+}
+f2(10)
+# Error in y + (x * x) : non-numeric argument to binary operator
+
+
+#-------------
+
+g2<-function(x,y)
+{
+  y+(x*x)
+}
+f2<-function(x)
+{
+  y=10
+  g2(x,y)
+}
+f2(10)
+# [1] 110
