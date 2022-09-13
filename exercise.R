@@ -2600,3 +2600,14 @@ f2<-function(x)
 }
 f2(10)
 # [1] 110
+
+-------------------------------
+# Built in Functions
+normalDist <- rnorm(1000,0,1)
+mean(normalDist)
+# [1] 0.03983652
+hist(normalDist)
+
+?hist
+
+hist(normalDist, breaks =50)
