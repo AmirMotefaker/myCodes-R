@@ -1,6 +1,8 @@
+# Code by @AmirMotefaker
+
 # Type Conversion
 # You can convert from one type to another with the following functions:
-  
+
 # as.numeric()
 # as.integer()
 # as.complex()
@@ -16,8 +18,15 @@ b <- as.integer(y)
 
 # print values of x and y
 x
+# [1] 1
+
 y
+# [1] 2
+
 
 # print the class name of a and b
 class(a)
+# [1] "numeric"
+
 class(b)
+# [1] "integer"
