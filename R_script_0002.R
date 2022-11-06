@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # Basic data types in R can be divided into the following types:
   
 # numeric - (10.5, 55, 787)
@@ -10,19 +12,24 @@
 # numeric
 x <- 10.5
 class(x)
+# [1] "numeric"
 
 # integer
 x <- 1000L
 class(x)
+# [1] "integer"
 
 # complex
 x <- 9i + 3
 class(x)
+# [1] "complex"
 
 # character/string
 x <- "R is exciting"
 class(x)
+# [1] "character"
 
 # logical/boolean
 x <- TRUE
 class(x)
+# [1] "logical"
