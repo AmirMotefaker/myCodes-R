@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # R For Loop
 
 for (x in 1:10) {
