@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # R Math
 
 10 + 5
