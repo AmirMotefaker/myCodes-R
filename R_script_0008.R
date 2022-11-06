@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # R Operators
 
 10 + 5
