@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # R Booleans / Logical Values
 
 10 > 9    # TRUE because 10 is greater than 9
