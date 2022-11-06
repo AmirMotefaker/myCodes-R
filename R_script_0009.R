@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # R If ... Else
 
 # Conditions and If Statements
