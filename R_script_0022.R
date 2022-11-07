@@ -1,5 +1,6 @@
-# R Scatter Plot
+# Code by @AmirMotefaker
 
+# R Scatter Plot
 
 
 # Scatter Plots
