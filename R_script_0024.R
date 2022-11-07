@@ -1,5 +1,6 @@
-# R Bar Charts
+# Code by @AmirMotefaker
 
+# R Bar Charts
 
 
 # Bar Charts
