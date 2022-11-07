@@ -1,6 +1,6 @@
+# Code By @AmirMotefaker
+
 # R Arrays
-
-
 
 # Arrays
 # Compared to matrices, arrays can have more than two dimensions.
