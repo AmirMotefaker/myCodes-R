@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # Find the largest input number
 input <- readLines('stdin')
 x <- as.integer(input[1])
