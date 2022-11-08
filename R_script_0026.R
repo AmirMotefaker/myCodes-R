@@ -1,5 +1,6 @@
-# R Max and Min
+# Code by @AmirMotefaker
 
+# R Max and Min
 
 
 # Max Min
