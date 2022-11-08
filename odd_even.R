@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # Find whether the input number is even or odd
 x <- readLines('stdin')
 num <- as.integer(x[1])
