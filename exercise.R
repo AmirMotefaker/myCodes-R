@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 model1 <- 'hello'
 typeof(model1)
 # [1] "character"
