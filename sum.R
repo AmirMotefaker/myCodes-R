@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # Sums of 2 input numbers
 Num1=readline(prompt="Enter the 1st number:")
 Num1=as.integer(Num1)
