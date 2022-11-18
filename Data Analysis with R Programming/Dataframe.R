@@ -1,6 +1,6 @@
 ---
 Data Analysis with R Programming by Google
-Code by @AirMotefakr
+Code by @AmirMotefaker
 title: "Lesson 2: Dataframe Solutions"
 output: html_document
 ---
