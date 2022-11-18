@@ -1,5 +1,5 @@
 ---
-Data Anlysis with R Pogramng by Google
+Data Analysis with R Pogramng by Google
 Code by @AirMotefakr
 title: "Lesson 2: Dataframe Solutions"
 output: html_document
