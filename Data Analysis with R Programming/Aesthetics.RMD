@@ -1,6 +1,6 @@
 ---
-Data Analysis with R Programming by Gogle
-Code by @AmirMotefaker
+Data Analysis with R Programming by Google
+Code by @AmirMoteaker
 title: "Lesson 3: Aesthetics Solutions"
 output: html_document
 ---
