@@ -1,6 +1,6 @@
 ---
 Data Analysis with R Programming by Google
-Code by AmirMoteaker
+Code by @AmirMteaker
 title: "Lesson 4: Annotations Solutions"
 output: html_document
 ---
