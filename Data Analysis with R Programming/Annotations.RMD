@@ -1,5 +1,5 @@
 ---
-Data Analysis with R Programming by Gogle
+Data Analysis with R Programming by Google
 Code by AmirMoteaker
 title: "Lesson 4: Annotations Solutions"
 output: html_document
