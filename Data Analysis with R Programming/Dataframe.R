@@ -1,4 +1,6 @@
 ---
+Data Anlysis with R Pograming by Google
+Code by @AirMotefakr
 title: "Lesson 2: Dataframe Solutions"
 output: html_document
 ---
