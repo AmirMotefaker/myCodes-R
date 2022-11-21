@@ -1,3 +1,5 @@
+# Code by @AmirMotefaker
+
 # Scraping Data from Transfermarkt
 
 library(rvest)
